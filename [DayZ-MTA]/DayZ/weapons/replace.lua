@@ -35,20 +35,40 @@ function start()
 	for i,v in ipairs(Armas) do
 		Replace(v[2],v[1],v[3])
 	end
+	Sounds()
 end
-
-function PlaySound(ID)
-  wpn1 = getElementData(source,"currentweapon_1")
-  x,y,z = getPedWeaponMuzzlePosition(source)
-  for _,weap in pairs(Armas)do
-      soundName = weap[1]:gsub(' ',' ')
-      if wpn1 == weap[1] then
-	  if not fileExists("sounds/weapons/"..soundName..".wav")then return end
-	  sound = playSound3D("sounds/weapons/"..soundName..".wav",x,y,z, false)
-	  setSoundMaxDistance(sound,200)
-	end
-  end
-end
-addEventHandler("onClientPlayerWeaponFire",root,PlaySound)
-
 addEventHandler( "onClientResourceStart", resourceRoot, start )
+
+function Sounds()
+	for k, v in ipairs(Armas) do
+		local Arma = v[1]
+
+		Armas[Arma] = {}
+
+		if v[6] then
+			Armas[Arma].Sonido = v[6]
+		else
+			Armas[Arma].Sonido = v[1]
+		end
+	end
+end
+
+function Disparo()
+	local Slot = getPedWeaponSlot(source)
+    local mX, mY, mZ = getPedWeaponMuzzlePosition(source)
+
+	name = false
+
+	if Slot == 3 or Slot == 5 or Slot == 6 then
+		name = source:getData('currentweapon_1')
+	elseif Slot == 2 or Slot == 4 then
+		name = source:getData('currentweapon_2')
+	end
+
+	if not name then return end
+
+	Sonido = playSound3D('sounds/weapons/'..Armas[name].Sonido..'.wav', mX, mY, mZ, false)
+	setSoundMaxDistance(Sonido, 75)
+end
+addEventHandler("onClientPlayerWeaponFire", getRootElement(), Disparo)
+
