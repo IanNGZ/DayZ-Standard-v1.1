@@ -1,0 +1,19 @@
+<meta>
+    <info author="BR E BR aushaush" name="Painel de Login" type="script" version="1.3" />
+    <file src="font.ttf" />
+
+    <script src="client.lua" type="client" cache="false" />
+    <script src="textlib.lua" type="client"cache="false" />
+
+    <script src="server.lua" type="server" />
+
+    <file src="images/bg_1.png" />
+	<file src="images/bg_2.png" />
+	<file src="images/bg_3.png" />
+	<file src="images/bg_4.png" />
+    <file src="images/button_mouse.png" />
+    <file src="images/button_standart.png" />
+    <file src="images/menu.png" />
+
+    <min_mta_version client="1.3.1-9.04690"></min_mta_version>
+</meta>

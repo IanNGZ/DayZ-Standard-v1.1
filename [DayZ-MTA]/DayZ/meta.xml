@@ -1,0 +1,233 @@
+
+<meta>
+    <info author="Hades" description="DayZ for MTA" version="1.0" type="gamemode" />
+    <oop>true</oop>
+    <script src="weapons/shared.lua" type="shared" cache="false"/>
+    <script src="weapons/replace.lua" type="client" cache="false"/>
+    <script src="tableGeneral.lua" type="shared" cache="false"/>
+    <script src="editor_server.lua" type="server" cache="false"/>
+    <script src="editor_client.lua" type="client" cache="false"/>
+    <script src="pickups.lua" type="server" cache="false"/>
+    <script src="spawn.lua" type="server" cache="false"/>
+    <script src="vehicle_spawns.lua" type="server" cache="false"/>
+    <script src="survivorSystem.lua" type="server" cache="false"/>
+	<script src="weather.lua" type="server"  />
+    <script src="login.lua" type="server" cache="false"/>
+    <script src="tools/jq_server.lua" type="server" cache="false"/>
+    <script src="menu_client.lua" type="client"  cache="false"/>
+    <script src="inventory.lua" type="client" cache="false" />
+    <script src="survivorSystem_client.lua" type="client" cache="false"/>
+    <script src="tools/jq_client.lua" type="client" cache="false"/>
+    <script src="textlib.lua" type="client" cache="false"/>
+    <script src="shader/motion/motion_c.lua" type="client" cache="false"/>
+    
+    
+	<file src="shader/motion/motion.fx" />
+    <script src="shader/blackwhite/blackwhite_c.lua" type="client" cache="false"/>
+    <file src="shader/blackwhite/blackwhite.fx" />
+    <file src="tools/images/c_info/rand.png" type="client" cache="false"/>
+    <file src="tools/images/background.png" type="client" cache="false"/>
+    <file src="tools/images/imageHolder.png" type="client" cache="false"/>
+    <file src="tools/images/flags/died.png" type="client" cache="false"/>
+    <file src="tools/images/flags/join.png" type="client" cache="false"/>
+    <file src="tools/images/flags/quit.png" type="client" cache="false"/>
+	
+    <file src="images/scrollmenu_1.png" type="client" cache="false"/>
+    <file src="images/background_scoreboard.png" type="client" cache="false"/>
+    <file src="images/white.png" type="client" cache="false"/>
+    <file src="images/window_bg.png" type="client" cache="false"/>
+ 
+    <file src="mods/sniper.txd" type="client" cache="false"/>
+    <file src="mods/sniper.dff" type="client" cache="false"/>
+    <file src="mods/standart.txd" type="client" cache="false"/>
+    <file src="mods/standart1.txd" type="client" cache="false"/>
+	<file src="mods/standart2.txd" type="client" cache="false"/>
+	<file src="mods/standart3.txd" type="client" cache="false"/>
+	<file src="mods/standart4.txd" type="client" cache="false"/>
+    <file src="mods/standart.dff" type="client" cache="false"/>
+    <file src="mods/femalestandard.dff" type="client" cache="false"/>
+    <file src="mods/femalestandard.txd" type="client" cache="false"/>
+	<file src="mods/rebel.dff" type="client" cache="false"/>
+    <file src="mods/rebel.txd" type="client" cache="false"/>
+	<file src="mods/banditf.dff" type="client" cache="false"/>
+    <file src="mods/banditf.txd" type="client" cache="false"/>
+	<file src="mods/banditf2.dff" type="client" cache="false"/>
+    <file src="mods/female1.txd" type="client" cache="false"/>
+	<file src="mods/female1.dff" type="client" cache="false"/>
+    <file src="mods/banditf2.txd" type="client" cache="false"/>
+	<file src="mods/bandit3.dff" type="client" cache="false"/>
+    <file src="mods/bandit3.txd" type="client" cache="false"/>
+	<file src="mods/jill.dff" type="client" cache="false"/>
+    <file src="mods/jill.txd" type="client" cache="false"/>
+	<file src="mods/jillarmy.dff" type="client" cache="false"/>
+    <file src="mods/jillarmy.txd" type="client" cache="false"/>
+	<file src="mods/trap_open.txd" type="client" cache="false"/>
+	<file src="mods/trap_open.dff" type="client" cache="false"/>
+	<file src="mods/trap_open.col" type="client" cache="false"/>
+	<file src="mods/trap_closed.dff" type="client" cache="false"/>
+	<file src="mods/trap_closed.col" type="client" cache="false"/>
+
+
+
+
+    <!-- Weapons-->
+    <file src="mods/weapons/None.txd" />
+    <file src="mods/weapons/None.dff" />
+
+    <file src="mods/weapons/AK/Ak-47.txd" />
+    <file src="mods/weapons/AK/Ak-47.dff" />
+
+    <file src="mods/weapons/M4/M4A1.txd" />
+    <file src="mods/weapons/M4/M4A1.dff" />
+
+    <file src="mods/weapons/M4/G36-KV.txd" />
+    <file src="mods/weapons/M4/G36-KV.dff" />
+
+    <file src="mods/weapons/Snipers/AWP.txd" />
+    <file src="mods/weapons/Snipers/AWP.dff" />
+
+    <file src="sounds/weapons/M4A1.wav" cache="false"/>
+    <file src="sounds/weapons/G36-KV.wav" cache="false"/>
+    <file src="sounds/weapons/Ak-47.wav" cache="false"/>
+    <file src="sounds/weapons/AWP.wav" cache="false"/>
+
+
+
+	<!-- Sons -->
+    <file src="sounds/hit1.mp3" />
+    <file src="sounds/hit2.mp3" />
+    <file src="sounds/hit3.mp3" />
+	<file src="sounds/trap.ogg" />
+	<file src="sounds/scream_short_0.ogg" />
+	<file src="sounds/scream_short_1.ogg" />
+	<file src="sounds/scream_short_2.ogg" />
+	<file src="sounds/scream_short_3.ogg" />
+	<file src="sounds/scream_short_4.ogg" />
+	<file src="sounds/panic_0.ogg" />
+	<file src="sounds/refuel.ogg" />
+	<file src="sounds/repair.ogg" />
+	<file src="sounds/itm_grenade_up.wav" />
+	<file src="sounds/wpn_grenadelauncher_fire_3d_01.wav"/>
+	<!-- Items -->
+    <file src="items/assault_ammo.txd" type="client" cache="false"/>
+    <file src="items/assault_ammo.dff" type="client" cache="false"/>
+	<file src="items/bloodbag.txd" type="client" cache="false"/>
+    <file src="items/bloodbag.dff" type="client" cache="false"/>
+	<file src="items/tentbag.txd" type="client" cache="false"/>
+    <file src="items/tentbag.dff" type="client" cache="false"/>
+    <file src="items/army_clothes.txd" type="client" cache="false"/>
+    <file src="items/army_clothes.dff" type="client" cache="false"/>
+    <file src="items/backpack_alice.txd" type="client" cache="false"/>
+    <file src="items/backpack_alice.dff" type="client" cache="false"/>
+    <file src="items/backpack_coyote.txd" type="client" cache="false"/>
+    <file src="items/backpack_coyote.dff" type="client" cache="false"/>
+	<file src="items/drybag.txd" type="client" cache="false"/>
+    <file src="items/drybag.dff" type="client" cache="false"/>
+    <file src="items/beans_can.txd" type="client" cache="false"/>
+    <file src="items/beans_can.dff" type="client" cache="false"/>
+    <file src="items/civilian_clothes.txd" type="client" cache="false"/>
+    <file src="items/civilian_clothes.dff" type="client" cache="false"/>
+    <file src="items/first_aid_kit.txd" type="client" cache="false"/>
+    <file src="items/first_aid_kit.dff" type="client" cache="false"/>
+    <file src="items/heat_pack.txd" type="client" cache="false"/>
+    <file src="items/heat_pack.dff" type="client" cache="false"/>
+    <file src="items/katana.txd" type="client" cache="false"/>
+    <file src="items/katana.dff" type="client" cache="false"/>
+    <file src="items/pain_killers.txd" type="client" cache="false"/>
+    <file src="items/pain_killers.dff" type="client" cache="false"/>
+    <file src="items/pasta_can.txd" type="client" cache="false"/>
+    <file src="items/pasta_can.dff" type="client" cache="false"/>
+    <file src="items/pistol_ammo.txd" type="client" cache="false"/>
+    <file src="items/pistol_ammo.dff" type="client" cache="false"/>
+    <file src="items/shotgun_ammo.txd" type="client" cache="false"/>
+    <file src="items/shotgun_ammo.dff" type="client" cache="false"/>
+    <file src="items/backpack_small.txd" type="client" cache="false"/>
+    <file src="items/backpack_small.dff" type="client" cache="false"/>
+    <file src="items/backpack_czech.txd" type="client" cache="false"/>
+    <file src="items/backpack_czech.dff" type="client" cache="false"/>
+	<file src="items/mountain.txd" type="client" cache="false"/>
+    <file src="items/mountain.dff" type="client" cache="false"/>
+    <file src="items/smg_ammo.txd" type="client" cache="false"/>
+    <file src="items/smg_ammo.dff" type="client" cache="false"/>
+    <file src="items/sniper_ammo.txd" type="client" cache="false"/>
+    <file src="items/sniper_ammo.dff" type="client" cache="false"/>
+    <file src="items/sniper_clothes.txd" type="client" cache="false"/>
+    <file src="items/sniper_clothes.dff" type="client" cache="false"/>
+    <file src="items/soda_can.txd" type="client" cache="false"/>
+    <file src="items/soda_can.dff" type="client" cache="false"/>
+    <file src="items/water_bottle.txd" type="client" cache="false"/>
+    <file src="items/water_bottle.dff" type="client" cache="false"/>
+    <file src="items/standard_clothes.txd" type="client" cache="false"/>
+    <file src="items/standard_clothes.dff" type="client" cache="false"/>
+    <file src="items/tent.txd" type="client" cache="false"/>
+    <file src="items/tent.dff" type="client" cache="false"/>
+    <file src="items/tent.col" type="client" cache="false"/>
+    <file src="items/wirefence.txd" type="client" cache="false"/>
+    <file src="items/wirefence.dff" type="client" cache="false"/>
+    <file src="items/camera.txd" type="client" cache="false"/>
+    <file src="items/camera.dff" type="client" cache="false"/>
+	<!-- Bone_Attach -->
+	<script src="bone_attach/bone_attach.lua" />
+	<script src="bone_attach/bone_attach_c.lua" type="client" cache="false"/>
+	<script src="bone_attach/attach_func.lua" />
+	<script src="bone_attach/attach_func.lua" type="client" cache="false"/>
+	<script src="bone_attach/bone_pos_rot.lua" type="client" cache="false"/>	
+	<export function="attachElementToBone" type="server" />
+	<export function="attachElementToBone" type="client" />
+	<export function="detachElementFromBone" type="server" />
+	<export function="detachElementFromBone" type="client" />
+	<export function="isElementAttachedToBone" type="server" />
+	<export function="isElementAttachedToBone" type="client" />
+	<export function="getElementBoneAttachmentDetails" type="server" />
+	<export function="getElementBoneAttachmentDetails" type="client" />
+	<export function="setElementBonePositionOffset" type="server" />
+	<export function="setElementBonePositionOffset" type="client" />
+	<export function="setElementBoneRotationOffset" type="server" />
+	<export function="setElementBoneRotationOffset" type="client" />
+	<export function="getBonePositionAndRotation" type="client" />
+    <file src="images/bpvest.png" />
+    <file src="images/bpvest1.png" />
+    <file src="images/dayzicons/bandit/0.png" />
+    <file src="images/dayzicons/bandit/-1000.png" />
+    <file src="images/dayzicons/bandit/2500.png" />
+    <file src="images/dayzicons/bandit/-2500.png" />
+    <file src="images/dayzicons/bandit/3500.png" />
+    <file src="images/dayzicons/bandit/5000.png" />
+    <file src="images/dayzicons/blood/100.png" />
+    <file src="images/dayzicons/blood/80.png" />
+    <file src="images/dayzicons/blood/50.png" />
+    <file src="images/dayzicons/blood/30.png" />
+    <file src="images/dayzicons/blood/10.png" />
+    <file src="images/dayzicons/blood/0.png" />
+    <file src="images/dayzicons/drink/100.png" />
+    <file src="images/dayzicons/drink/80.png" />
+    <file src="images/dayzicons/drink/60.png" />
+    <file src="images/dayzicons/drink/40.png" />
+    <file src="images/dayzicons/drink/15.png" />
+    <file src="images/dayzicons/drink/0.png" />
+    <file src="images/dayzicons/eat/100.png" />
+    <file src="images/dayzicons/eat/80.png" />
+    <file src="images/dayzicons/eat/50.png" />
+    <file src="images/dayzicons/eat/30.png" />
+    <file src="images/dayzicons/eat/10.png" />
+    <file src="images/dayzicons/eat/0.png" />
+    <file src="images/dayzicons/indicators/eye.png" />
+    <file src="images/dayzicons/indicators/sound.png" />
+    <file src="images/dayzicons/indicators/level_1.png" />
+    <file src="images/dayzicons/indicators/level_2.png" />
+    <file src="images/dayzicons/indicators/level_3.png" />
+    <file src="images/dayzicons/indicators/level_4.png" />
+    <file src="images/dayzicons/indicators/level_5.png" />
+    <file src="images/dayzicons/temperature/38.png" />
+    <file src="images/dayzicons/temperature/37.png" />
+    <file src="images/dayzicons/temperature/36.png" />
+    <file src="images/dayzicons/temperature/35.png" />
+    <file src="images/dayzicons/temperature/34.png" />
+    <file src="images/dayzicons/temperature/0.png" />
+    <file src="images/dayzicons/medic.png" />
+    <file src="images/dayzicons/infection.png" />
+    <file src="images/dayzicons/brokenbone.png" />
+    <file src="images/net2.png" />
+    <file src="images/net3.png" />
+    <file src="images/network2.png" />
+</meta>
