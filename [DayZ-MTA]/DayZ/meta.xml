@@ -80,14 +80,10 @@
     <file src="mods/weapons/M4/M4A1.txd" />
     <file src="mods/weapons/M4/M4A1.dff" />
 
-    <file src="mods/weapons/M4/G36-KV.txd" />
-    <file src="mods/weapons/M4/G36-KV.dff" />
-
     <file src="mods/weapons/Snipers/AWP.txd" />
     <file src="mods/weapons/Snipers/AWP.dff" />
 
     <file src="sounds/weapons/M4A1.wav" cache="false"/>
-    <file src="sounds/weapons/G36-KV.wav" cache="false"/>
     <file src="sounds/weapons/Ak-47.wav" cache="false"/>
     <file src="sounds/weapons/AWP.wav" cache="false"/>
 
