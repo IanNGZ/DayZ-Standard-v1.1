@@ -14,6 +14,21 @@ function Replace(ID, Archivo, tipo)
 		engineImportTXD(engineLoadTXD('mods/weapons/Snipers/'..Archivo..'.txd'), ID)
 		engineReplaceModel(engineLoadDFF('mods/weapons/Snipers/'..Archivo..'.dff'), ID)
 	end
+	if tipo == 22 or 23 or 24 then
+		if not fileExists('mods/weapons/Handguns/'..Archivo..'.txd')then return end
+		engineImportTXD(engineLoadTXD('mods/weapons/Handguns/'..Archivo..'.txd'), ID)
+		engineReplaceModel(engineLoadDFF('mods/weapons/Handguns/'..Archivo..'.dff'), ID)
+	end
+	if tipo == 25 or 26 or 27 then
+		if not fileExists('mods/weapons/Shotguns/'..Archivo..'.txd')then return end
+		engineImportTXD(engineLoadTXD('mods/weapons/Shotguns/'..Archivo..'.txd'), ID)
+		engineReplaceModel(engineLoadDFF('mods/weapons/Shotguns/'..Archivo..'.dff'), ID)
+	end
+	if tipo == 28 or 29 or 32 then
+		if not fileExists('mods/weapons/Sub-Machine/'..Archivo..'.txd')then return end
+		engineImportTXD(engineLoadTXD('mods/weapons/Sub-Machine/'..Archivo..'.txd'), ID)
+		engineReplaceModel(engineLoadDFF('mods/weapons/Sub-Machine/'..Archivo..'.dff'), ID)
+	end
 
 end
 
@@ -21,17 +36,46 @@ function start()
 	setWorldSoundEnabled(5, false)
 
 	tex = engineLoadTXD ( "mods/weapons/None.txd", 356)
+	--Handguns
+	engineImportTXD ( tex, 346)
+	engineImportTXD ( tex, 347)
+	engineImportTXD ( tex, 348)
+	--Shotguns
+	engineImportTXD ( tex, 349)
+	engineImportTXD ( tex, 350)
+	engineImportTXD ( tex, 351)
+	--Sub-Machine
+	engineImportTXD ( tex, 352)
+	engineImportTXD ( tex, 353)
+	engineImportTXD ( tex, 372)
+	--Assault Rifles
 	engineImportTXD ( tex, 355)
 	engineImportTXD ( tex, 356)
+	--Rifles
 	engineImportTXD ( tex, 357)
 	engineImportTXD ( tex, 358)
+
 	mod = engineLoadDFF ( "mods/weapons/None.dff", 356)
+
+
+	engineReplaceModel ( mod, 346)
+	engineReplaceModel ( mod, 347)
+	engineReplaceModel ( mod, 348)
+	--Shotguns
+	engineReplaceModel ( mod, 349)
+	engineReplaceModel ( mod, 350)
+	engineReplaceModel ( mod, 351)
+	--Sub-Machine
+	engineReplaceModel ( mod, 352)
+	engineReplaceModel ( mod, 353)
+	engineReplaceModel ( mod, 372)
+	--Assault Rifles
 	engineReplaceModel ( mod, 355)
 	engineReplaceModel ( mod, 356)
+	--Rifles
 	engineReplaceModel ( mod, 357)
 	engineReplaceModel ( mod, 358)
-
-
+	
 	for i,v in ipairs(Armas) do
 		Replace(v[2],v[1],v[3])
 	end

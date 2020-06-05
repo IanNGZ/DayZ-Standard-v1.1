@@ -5,24 +5,22 @@ function rearmPlayerWeapon (weaponName,slot)
     local ammoData,weapID = getWeaponAmmoType (weaponName)
     if getElementData(source,ammoData) <= 0 then triggerClientEvent (source, "displayClientInfo", source,"Rearm",shownInfos["nomag"],255,22,0) return end
     setElementData(source,"currentweapon_"..slot,weaponName)
+    setPedWeaponSlot( source, 0 )
     --Old Weapons
     local weapon = getElementData(source,"currentweapon_1")
     if weapon then
         local ammoData,weapID = getWeaponAmmoType (weapon)
         giveWeapon(source,weapID,getElementData(source,ammoData), true )
-        setPedWeaponSlot( source, 0 )
     end
     local weapon = getElementData(source,"currentweapon_2")
     if weapon then
         local ammoData,weapID = getWeaponAmmoType (weapon)
-        giveWeapon(source,weapID,getElementData(source,ammoData), false )
-        setPedWeaponSlot( source, 0 )
+        giveWeapon(source,weapID,getElementData(source,ammoData), true )
     end
     local weapon = getElementData(source,"currentweapon_3")
     if weapon then
         local ammoData,weapID = getWeaponAmmoType (weapon)
-        giveWeapon(source,weapID,getElementData(source,ammoData), false )
-        setPedWeaponSlot( source, 0 )
+        giveWeapon(source,weapID,getElementData(source,ammoData), true )
     end
     if elementWeaponBack[source] then
         detachElementFromBone(elementWeaponBack[source])
@@ -144,38 +142,37 @@ function weaponSwitchbBack ( previousWeaponID, currentWeaponID )
  local ammoData2,weapID2 = getWeaponAmmoType(weapon2)
  local x,y,z = getElementPosition(source)
  local rx,ry,rz = getElementRotation(source)
-          if previousWeaponID == weapID2 then
-           if elementWeaponbBack[source] then
+    if previousWeaponID == weapID2 then
+        if elementWeaponbBack[source] then
             detachElementFromBone(elementWeaponbBack[source])
             destroyElement(elementWeaponbBack[source])
             elementWeaponbBack[source] = false
-           end
-           if weapon2 == "Hatchet" then
-           elementWeaponbBack[source] = createObject(339,x,y,z)
-           setObjectScale(elementWeaponbBack[source],0.999)
-           elseif weapon2 == "Golf-Club" then
-           elementWeaponbBack[source] = createObject(333,x,y,z)
-           setObjectScale(elementWeaponbBack[source],0.999)
-           elseif weapon2 == "Baseball-Bat" then
-           elementWeaponbBack[source] = createObject(336,x,y,z)
-           setObjectScale(elementWeaponbBack[source],0.999)
-           elseif weapon2 == "Shovel" then
-           elementWeaponbBack[source] = createObject(337,x,y,z)
-           setObjectScale(elementWeaponbBack[source],0.999)
-		   elseif weapon2 == "--" then
-           end
-		   if elementBackpack[source] then
-           attachElementToBone(elementWeaponbBack[source],source,3,-0.15,-0.13,0.10,-0.1,-180,90)
-           else
-           attachElementToBone(elementWeaponbBack[source],source,3,0,-0.13,0.10,-0.1,-180,0)
-		   end
-           elseif currentWeaponID == weapID2 then
-	       if isElement(elementWeaponbBack[source]) then
-           detachElementFromBone(elementWeaponbBack[source])
-           destroyElement(elementWeaponbBack[source])
-           elementWeaponbBack[source] = false
-          end
-     end
+        end
+        for i,v in ipairs(Armas) do
+            if weapon2 == v[1] then
+            elementWeaponbBack[source] = createObject(v[2],x,y,z)
+            setObjectScale(elementWeaponbBack[source],1) 
+            end
+        end
+        if elementWeaponbBack[source] then
+            attachElementToBone(elementWeaponbBack[source],source,3,0.19,-0.11,-0.1,0,270,10)
+        end 
+    elseif currentWeaponID == weapID2 then
+        if isElement(elementWeaponbBack[source]) then
+            detachElementFromBone(elementWeaponbBack[source])
+            destroyElement(elementWeaponbBack[source])
+            elementWeaponbBack[source] = false
+        end
+        for i,v in ipairs(Armas) do
+            if weapon2 == v[1] then
+            elementWeaponbBack[source] = createObject(v[2],x,y,z)
+            setObjectScale(elementWeaponbBack[source],1) 
+            end
+        end
+        if elementWeaponbBack[source] then
+            attachElementToBone(elementWeaponbBack[source],source,12,0,0,0,0,270,0) 
+        end 
+    end
  end
 addEventHandler ( "onPlayerWeaponSwitch", getRootElement(), weaponSwitchbBack )
 
